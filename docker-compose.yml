@@ -24,6 +24,25 @@ services:
       - db
     tty: true
     stdin_open: true
+
+  swagger-editor:
+    image: swaggerapi/swagger-editor
+    ports:
+      - "8001:8080"
+    volumes:
+      - ./docs/openapi.yaml:/tmp/openapi.yaml
+    environment:
+      SWAGGER_FILE: /tmp/openapi.yaml
+
+  swagger-ui:
+    image: swaggerapi/swagger-ui
+    ports:
+      - "8002:8080"
+    volumes:
+      - ./docs/openapi.yaml:/usr/share/nginx/html/openapi.yaml
+    environment:
+      API_URL: openapi.yaml
+
 volumes:
   mysql_data:
   bundle_data:

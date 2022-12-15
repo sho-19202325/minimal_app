@@ -10,5 +10,10 @@ RSpec.describe 'Api::V1::Healthchecks', type: :request do
       expect(send_request).to eq 200
       expect(JSON.parse(response.body, symbolize_names: true)).to match({ result: 'ok' })
     end
+
+    it 'returns correct response' do
+      send_request
+      assert_schema_conform(200)
+    end
   end
 end
