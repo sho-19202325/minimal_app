@@ -13,7 +13,7 @@ RSpec.describe 'Api::V1::Healthchecks', type: :request do
 
     it 'returns correct response' do
       send_request
-      assert_schema_conform(200)
+      assert_response_schema_confirm(200)
     end
   end
 end
