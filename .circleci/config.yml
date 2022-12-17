@@ -6,7 +6,7 @@ jobs:
               environment:
                 BUNDLE_PATH: vendor/bundle
                 RAILS_ENV: test
-            - image: cimg/mysql:8.0.28
+            - image: cimg/mysql:8.0
               name: db
               environment:
                   MYSQL_ROOT_PASSWORD: passw0rd
