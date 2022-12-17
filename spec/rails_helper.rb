@@ -67,7 +67,8 @@ RSpec.configure do |config|
   config.add_setting :committee_options
   config.committee_options = {
     schema_path: Rails.root.join('docs/openapi.yaml').to_s,
-    parse_response_by_content_type: false
+    parse_response_by_content_type: false,
+    query_hash_key: 'rack.request.query_hash'
   }
 
   config.include Committee::Rails::Test::Methods
