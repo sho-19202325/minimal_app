@@ -4,7 +4,7 @@ module Api
   module V1
     class HealthchecksController < ApplicationController
       def index
-        render json: { result: 'ok' }
+        @result = 'ok'
       end
     end
   end
